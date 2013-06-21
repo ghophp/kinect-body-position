@@ -1,0 +1,47 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:k="http://schemas.microsoft.com/kinect/2013"
+	x:Class="Praxis.Views.StartArea"
+	x:Name="Start"
+	FlowDirection="LeftToRight"
+    MaxWidth="1024" MaxHeight="768">
+
+    <Grid Width="Auto" Height="Auto" Background="{DynamicResource StartAreaBackground}">
+        
+        <k:KinectTileButton 
+            BorderBrush="{x:Null}" 
+		    Background="{DynamicResource StartAreaBackground}"
+		    Foreground="{DynamicResource StartAreaBorder}" 
+		    Margin="12"
+            Click="OnStartAreaClick" ClickMode="Press" 
+            Width="Auto" Height="Auto" FontSize="16">
+        
+            <Grid x:Name="startbox">
+				
+		        <Grid.ColumnDefinitions>
+			        <ColumnDefinition Width="20*"/>
+			        <ColumnDefinition Width="20*"/>
+			        <ColumnDefinition Width="20*"/>
+		        </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"/>
+			        <RowDefinition Height="50*"/>
+		        </Grid.RowDefinitions>
+        
+                <Image Source="{DynamicResource StartIcon}" Stretch="Uniform" Grid.Column="1" Grid.Row="0"/>
+		        <Viewbox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+			        <Label Content="Iniciar processo de alongamento&#xA;" 
+				        FontFamily="Segoe UI" 
+				        FontWeight="Light" 
+				        Foreground="White"
+				        HorizontalAlignment="Center" Margin="40,0"
+				        />
+		        </Viewbox>
+	        </Grid>
+        </k:KinectTileButton>
+
+    </Grid>
+    
+</Page>

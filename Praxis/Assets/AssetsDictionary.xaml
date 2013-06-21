@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ImageBrush ImageSource="Images/app_background.jpg" x:Key="ApplicationBackground"></ImageBrush>
+    <SolidColorBrush x:Key="StartAreaBorder">#6d98b3</SolidColorBrush>
+    <SolidColorBrush x:Key="StartAreaBackground">#467da4</SolidColorBrush>
+    <BitmapImage x:Key="StartIcon">Images/start_area_icon.png</BitmapImage>
+    <BitmapImage x:Key="YesIcon">Images/okay.png</BitmapImage>
+    <BitmapImage x:Key="NoIcon">Images/no.png</BitmapImage>
+</ResourceDictionary>

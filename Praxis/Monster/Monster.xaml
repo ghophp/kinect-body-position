@@ -1,0 +1,332 @@
+﻿<Canvas
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Praxis.Monster.Monster" 
+      mc:Ignorable="d">
+	
+	<Canvas.Resources>
+		<Storyboard x:Key="EyeMovement" RepeatBehavior="Forever">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="6"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="4.875"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="-1.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Breath" RepeatBehavior="Forever">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="body">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="4.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Shake">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="head">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="7"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="6"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rightarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-21.433"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.012"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rightarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="17"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rightarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="leftarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="20.074"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.095"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-19"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="2"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Position1" AutoReverse="True">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="leftarmtop">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="165.266"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="165.266"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftarmtop">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-73.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="-73.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftarmtop">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="28.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="28.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="elbowleft">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-24.96"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-77.766"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="-104.054"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-129"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="-129"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="elbowleft">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-11.28"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-7.478"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="12.83"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="40.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="leftarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="17.077"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="79.734"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="146.068"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="leftarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-28.26"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-67.598"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="-31.144"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="leftarmbottom">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-20.52"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-110.248"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="-192.135"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="inverseleftarm">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="67.29"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="122.58"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="inverseleftarm">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-15.428"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="8.145"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="8.145"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="inverseleftarm">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="137.157"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="248.183"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="inverseleftarm">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="-63"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="inverseleftarm">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="-22"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="leftarmbottom">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="{x:Static Visibility.Visible}"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.9" Value="{x:Static Visibility.Hidden}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="inverseleftarm">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.9" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="inverseleftarm">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1.282"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="body">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="12.422"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="body">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="7.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="head">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="18.172"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="head">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="22.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="21"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="16.316"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Position2" AutoReverse="True">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="head">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="32.713"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="9.117"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="9.117"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.099"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="eyes">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="32.713"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="head">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="10"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="10"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Canvas.Resources>
+
+	<Canvas.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource Breath}"/>
+			<BeginStoryboard Storyboard="{StaticResource EyeMovement}"/>
+		</EventTrigger>
+	</Canvas.Triggers>
+
+	<Image Height="187.355" 
+		Canvas.Left="38.484" 
+		Source="/Praxis;component/Assets/Images/Monster/leftleg.png" 
+		Stretch="Fill" 
+		Canvas.Top="171.145" 
+		Width="58.637"
+		x:Name="leftleg"/>
+
+	<Image Height="187.355" 
+		Canvas.Left="136.213" 
+		Source="/Praxis;component/Assets/Images/Monster/rightleg.png" 
+		Stretch="Fill" 
+		Canvas.Top="171.145" 
+		Width="58.638"
+		x:Name="rightleg"/>
+	<Image x:Name="rightarmtop" Canvas.Left="159.565" Source="/Praxis;component/Assets/Images/Monster/rightarm.png" Stretch="Fill" Canvas.Top="84.408" RenderTransformOrigin="0.5,0.5" Height="61" Width="76">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform Angle="0.146"/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+	<Image x:Name="leftarmtop" Height="61" Canvas.Left="-2" Source="/Praxis;component/Assets/Images/Monster/leftarm.png" Stretch="Fill" Canvas.Top="85" Width="76" RenderTransformOrigin="0.5,0.5">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+	<Image x:Name="leftarmbottom" Height="102" Canvas.Left="4" Source="/Praxis;component/Assets/Images/Monster/leftarmbottom.png" Stretch="Fill" Canvas.Top="141" Width="61" RenderTransformOrigin="0.5,0.5">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+	<Image x:Name="rightarmbottom" Height="102" Canvas.Left="168.903" Source="/Praxis;component/Assets/Images/Monster/rightarmbottom.png" Stretch="Fill" Canvas.Top="141" Width="61" RenderTransformOrigin="0.5,0.5">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+	<Image x:Name="inverserightarm" Height="102" Canvas.Left="269" Source="/Praxis;component/Assets/Images/Monster/leftarmbottom.png" Stretch="Fill" Canvas.Top="-28.5" Width="61" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform Angle="-143.711"/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+	<Image x:Name="inverseleftarm" Height="102" Canvas.Left="168.903" Source="/Praxis;component/Assets/Images/Monster/rightarmbottom.png" Stretch="Fill" Canvas.Top="141" Width="61" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+	<Ellipse x:Name="elbowright" Fill="#FF3A3B3A" Height="14.667" Canvas.Left="203.403" Stroke="#FF1F2220" Canvas.Top="134.334" Width="12.5" RenderTransformOrigin="0.487,0.474">
+		<Ellipse.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Ellipse.RenderTransform>
+	</Ellipse>
+	<Ellipse x:Name="elbowleft" Fill="#FF3A3B3A" Height="14.667" Canvas.Left="19.654" Stroke="#FF1F2220" Canvas.Top="134.334" Width="12.5" RenderTransformOrigin="0.487,0.474">
+		<Ellipse.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Ellipse.RenderTransform>
+	</Ellipse>
+
+	<Image Height="176.3" 
+		Source="/Praxis;component/Assets/Images/Monster/body.png" 
+		Stretch="Fill" 
+		Canvas.Top="23.356" 
+		Width="172.249" 
+		Canvas.Left="31.154"
+		x:Name="body" RenderTransformOrigin="0.5,0.5">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+
+	<Image Height="105.896" 
+		Canvas.Left="80.63" 
+		Source="/Praxis;component/Assets/Images/Monster/head.png" 
+		Stretch="Fill" 
+		Canvas.Top="-0.5" 
+		Width="76.351"
+		x:Name="head" RenderTransformOrigin="0.5,0.5">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+
+	<Image Height="8.729" 
+		Canvas.Left="101.092" 
+		Source="/Praxis;component/Assets/Images/Monster/eyes.png" 
+		Stretch="Fill" 
+		Canvas.Top="49.538"
+		Width="36.649"
+		x:Name="eyes" RenderTransformOrigin="0.5,0.5">
+		<Image.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Image.RenderTransform>
+	</Image>
+
+</Canvas>
