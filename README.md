@@ -5,9 +5,9 @@ A test case application for recognize body positions. Was my final paper system,
 
 ## Screenshots
 
-![Alt text](/screenshot/screen1.jpg "Main screen")
+![Alt text](https://raw2.github.com/ghophp/kinect-body-position/master/screenshot/screen1.jpg "Main screen")
 
-![Alt text](/screenshot/screen2.jpg "Recognition screen")
+![Alt text](https://raw2.github.com/ghophp/kinect-body-position/master/screenshot/screen2.jpg "Recognition screen")
 
 ## TODO
 
