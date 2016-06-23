@@ -5,13 +5,9 @@ A test case application for recognize body positions. Was my final paper system,
 
 ## Screenshots
 
-![Alt text](https://raw2.github.com/ghophp/kinect-body-position/master/screenshot/screen1.jpg "Main screen")
+![Main Screen](./screenshot/screen1.jpg "Main screen")
 
-![Alt text](https://raw2.github.com/ghophp/kinect-body-position/master/screenshot/screen2.jpg "Recognition screen")
-
-## TODO
-
-Segment the project into a complete body recognition framework.
+![Recognition Screen](./screenshot/screen2.jpg "Recognition screen")
 
 ## License
 
