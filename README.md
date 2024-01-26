@@ -1,7 +1,7 @@
 Kinect Body Position
 ====================
 
-A test case application for recognize body positions. Was my final paper system, its a cool prototype.
+A PoC based on Kinect SDK to recognize body positions and guide users into stretching.
 
 ## Screenshots
 
@@ -11,4 +11,4 @@ A test case application for recognize body positions. Was my final paper system,
 
 ## License
 
-This code is under the MIT license. Use as you want, if you can, star the project and follow me :)
+This code is under the MIT license.
